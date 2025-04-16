@@ -52,7 +52,7 @@ DB_PASSWORD="your_db_password"
 
 3. **Start all services using Docker Compose**  
    ```bash
-   docker-compose up -d --build 
+   docker-compose up -d 
    ```
 
    This command starts:
