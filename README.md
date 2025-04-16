@@ -133,6 +133,9 @@ Query Parameters:
 │   └── ...
 ├── api_service/
 │   ├── app.py
+│   ├── models.py
+│   ├── schemas.py
+│   ├──utils.py    
 │   └── ...
 ├── docker-compose.yml
 ├── .env
