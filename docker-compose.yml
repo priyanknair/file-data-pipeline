@@ -1,0 +1,39 @@
+version: '3.7'
+
+services:
+  api_service:
+    container_name: api_service
+    build: ./api_service
+    env_file: .env
+#    command: python app.py
+    command: gunicorn --bind 0.0.0.0:5000 app:app
+    ports:
+      - 5000:5000
+    volumes:
+      - ./api_service:/api_service
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  publisher:
+    container_name: publisher
+    build: ./publisher
+    env_file: .env
+    working_dir: /publisher
+    command: python file_watcher.py
+    volumes:
+      - ./publisher:/publisher
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  consumer:
+    container_name: consumer
+    build: ./consumer
+    env_file: .env
+    working_dir: /consumer
+    command: python data_consumer.py
+    volumes:
+      - ./consumer:/consumer
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      - api_service
