@@ -27,11 +27,11 @@ with app.app_context():
     db.create_all()
 
 
-@app.route("/")
+@app.route("/file-data")
 def get_data():
     args = request.args
-    page = args.get('page', 1, type=int)
-    per_page = args.get('per_page', 10, type=int)
+    page = args.get('pageno', 1, type=int)
+    per_page = args.get('pagesize', 10, type=int)
     name = args.get('name')
     condition = []
     if name:

@@ -52,7 +52,7 @@ DB_PASSWORD="your_db_password"
 
 3. **Start all services using Docker Compose**  
    ```bash
-   docker-compose up --build
+   docker-compose up -d --build 
    ```
 
    This command starts:
@@ -80,14 +80,14 @@ User2
 
 ## 📡 API Service
 
-API Base URL: `http://localhost:8000/`
+API Base URL: `http://localhost:5000`
 
-### GET `/`
+### GET `/file-data`
 
 Query Parameters:
 
-- `page`: Page number (default `1`)
-- `per_page`: Number of items per page (default `20`)
+- `pageno`: Page number (default `1`)
+- `pagesize`: Number of items per page (default `10`)
 - `name`: (optional) Search by name
 
 #### 📘 Sample Response
