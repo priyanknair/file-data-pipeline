@@ -11,8 +11,8 @@ from watchdog.events import FileSystemEventHandler
 
 
 RABBITMQ_HOST = os.getenv('RABBITMQ_HOST', 'localhost')
-RABBITMQ_USER = os.getenv('RABBITMQ_USER', 'admin')
-RABBITMQ_PASSWORD = os.getenv('RABBITMQ_PASSWORD', 'Tubelight@1234')
+RABBITMQ_USER = os.getenv('RABBITMQ_USER', 'guest')
+RABBITMQ_PASSWORD = os.getenv('RABBITMQ_PASSWORD', 'guest')
 
 print("Starting publisher")
 

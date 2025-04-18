@@ -9,9 +9,6 @@ from schemas import FileDataSchema
 from utils import get_paginated_query
 
 
-RABBITMQ_HOST = os.getenv('RABBITMQ_HOST', 'localhost')
-RABBITMQ_USER = os.getenv('RABBITMQ_USER', 'guest')
-RABBITMQ_PASSWORD = os.getenv('RABBITMQ_PASSWORD', 'guest')
 HOST = os.getenv('DB_HOST', '127.0.0.1')
 USER = os.getenv('DB_USER', 'postgres')
 PASSWORD = os.getenv('DB_PASSWORD', 'root')
